@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#701d2b">
+<title>新岁启封 · A Year of New Beginnings</title>
+<style>
+  :root {
+    --wine: #701d2b;
+    --wine-dark: #42111b;
+    --gold: #d9b66f;
+    --cream: #f7eedb;
+    --muted: #d9c9ae;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--cream);
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(217,182,111,.16), transparent 42%),
+      linear-gradient(155deg, #42111b 0%, #701d2b 52%, #351019 100%);
+    font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+    display: grid;
+    place-items: center;
+    overflow-x: hidden;
+  }
+  .page {
+    position: relative;
+    width: min(92vw, 720px);
+    min-height: 88vh;
+    margin: 6vh auto;
+    padding: clamp(28px, 6vw, 64px) clamp(22px, 7vw, 76px);
+    border: 1px solid rgba(217,182,111,.7);
+    outline: 1px solid rgba(217,182,111,.25);
+    outline-offset: 7px;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba(255,255,255,.025), transparent 60%);
+    animation: arrive 1.2s ease both;
+  }
+  .page::before, .page::after {
+    content: "✦";
+    position: absolute;
+    color: var(--gold);
+    opacity: .65;
+    font-size: 24px;
+  }
+  .page::before { top: 20px; left: 22px; }
+  .page::after { bottom: 20px; right: 22px; }
+  .eyebrow {
+    letter-spacing: .25em;
+    color: var(--gold);
+    font: 12px/1.8 Arial, sans-serif;
+  }
+  .moon {
+    width: 76px;
+    height: 76px;
+    margin: 28px auto 22px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #fff3cb, #d9b66f 65%, #a77c39);
+    box-shadow: 0 0 44px rgba(217,182,111,.24);
+    position: relative;
+  }
+  .moon::after {
+    content: "";
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--wine);
+    top: -9px;
+    left: 22px;
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(42px, 10vw, 68px);
+    font-weight: 500;
+    letter-spacing: .16em;
+    text-indent: .16em;
+    color: var(--cream);
+  }
+  .english {
+    margin: 14px 0 26px;
+    color: var(--gold);
+    letter-spacing: .12em;
+    font: 12px/1.7 Arial, sans-serif;
+  }
+  .rule {
+    width: 72px;
+    height: 1px;
+    margin: 0 auto 28px;
+    background: var(--gold);
+  }
+  .wish {
+    max-width: 440px;
+    margin: 0 auto;
+    font-size: clamp(16px, 3.5vw, 19px);
+    line-height: 2.15;
+    letter-spacing: .06em;
+  }
+  .wish p { margin: 7px 0; }
+  .button {
+    appearance: none;
+    margin: 34px 0 18px;
+    padding: 14px 28px;
+    border: 1px solid var(--gold);
+    border-radius: 2px;
+    color: var(--wine-dark);
+    background: linear-gradient(110deg, #b98d49, #f0d89b, #c39b55);
+    font: 15px/1.4 inherit;
+    letter-spacing: .08em;
+    cursor: pointer;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .button:hover, .button:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,.2);
+  }
+  .reveal {
+    max-width: 440px;
+    margin: 8px auto 0;
+    padding: 18px 16px;
+    border-top: 1px solid rgba(217,182,111,.45);
+    border-bottom: 1px solid rgba(217,182,111,.45);
+    color: #fff4d8;
+    line-height: 1.9;
+    animation: fadeUp .6s ease both;
+  }
+  [hidden] { display: none !important; }
+  .footer {
+    margin-top: 34px;
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: .18em;
+  }
+  .spark {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #ffe8a6;
+    box-shadow: 0 0 10px 3px rgba(255,221,140,.55);
+    pointer-events: none;
+    animation: burst 1.2s ease-out forwards;
+  }
+  @keyframes arrive {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes burst {
+    from { opacity: 1; transform: translate(0,0) scale(1); }
+    to { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(.15); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="eyebrow">LUNAR NEW YEAR · 2027</div>
+  <div class="moon" aria-hidden="true"></div>
+  <h1>新岁启封</h1>
+  <div class="english">A YEAR OF NEW BEGINNINGS</div>
+  <div class="rule"></div>
+  <section class="wish">
+    <p>愿新岁，所行皆坦途，所愿皆成真。</p>
+    <p>愿你心中有光，脚下有路，</p>
+    <p>未来有无限可能。</p>
+  </section>
+  <button class="button" id="openWish" type="button">✦　开启新年祝福　✦</button>
+  <section class="reveal" id="surprise" aria-live="polite" hidden>
+    <div style="color:#d9b66f;letter-spacing:.18em;margin-bottom:8px;">新年祝愿 · A LITTLE WISH</div>
+    <div id="wishText">愿你新的一年，所遇皆美好。</div>
+  </section>
+  <div class="footer">福启新岁　·　万事顺遂</div>
+</main>
+<script>
+  const wishes = [
+    "愿你新的一年，所遇皆美好，所行皆坦荡。",
+    "愿新岁胜旧岁，欢愉且胜意，万事皆可期。",
+    "愿你有勇气追逐热爱，也有从容拥抱日常。",
+    "愿每一份努力都有回响，每一个梦想都有方向。",
+    "愿平安喜乐常伴，新的故事闪闪发光。"
+  ];
+  const button = document.getElementById("openWish");
+  const surprise = document.getElementById("surprise");
+  const wishText = document.getElementById("wishText");
+
+  button.addEventListener("click", () => {
+    wishText.textContent = wishes[Math.floor(Math.random() * wishes.length)];
+    surprise.hidden = false;
+    const rect = button.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    for (let i = 0; i < 28; i++) {
+      const dot = document.createElement("span");
+      dot.className = "spark";
+      dot.style.left = cx + "px";
+      dot.style.top = cy + "px";
+      const angle = Math.PI * 2 * i / 28;
+      const distance = 45 + Math.random() * 90;
+      dot.style.setProperty("--dx", Math.cos(angle) * distance + "px");
+      dot.style.setProperty("--dy", Math.sin(angle) * distance + "px");
+      document.body.appendChild(dot);
+      dot.addEventListener("animationend", () => dot.remove());
+    }
+  });
+</script>
+</body>
+</html>
